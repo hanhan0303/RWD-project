@@ -1,0 +1,505 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*CSS-Reset-End*/
+img{
+    max-width: 100%;
+    height: auto;
+}
+*,*::before,*::after{
+    box-sizing: border-box;
+    }
+p,h2,h3,li{
+    font-family: arial,sans-serif;
+}
+
+.wrap{
+    max-width: 1024px;  
+    margin: 0 auto; 
+}
+.wrap a:hover{
+    cursor: pointer;
+}
+.header{
+    height: 420px;
+    background: url(image/header.png) no-repeat; 
+    background-size: contain;
+    background-position:center;
+    background-color: #000;
+    position: relative;
+}
+@media (max-width: 768px)and (min-width:415px){
+    .header{
+        background-image: url(image/header_tabel.png);
+    }
+}
+@media (max-width: 414px){
+    .header{
+        background-image: url(image/header_mobile.png);
+    }
+}
+.topbar{
+    display: flex;
+    justify-content: space-between;
+    color: #FFF;
+    font-size: 24px;
+    height: 56px;
+    background: rgba(0,0,0,0.75);
+    z-index: 3;
+    position: relative;
+}
+.topbar h1{
+    background: url(image/logo.svg);
+    width: 120px;
+    height: 24px;
+    overflow: hidden;
+    text-indent: 101%;
+    white-space: nowrap;
+}
+.topbar a{
+    display: block;
+    padding: 16px 16px 16px 42px;
+}
+.hamburger label,input{
+    display: none;
+}
+.menu{
+    display: flex;
+    font-size: 16px;
+}
+.topbar .menu a{
+    text-decoration: none;
+    color: white;
+    padding: 18px 15px 17px;
+}
+.topbar .menu a:hover{
+    background: #FFF;
+    color: #000;
+}
+@media (max-width: 414px){
+    .hamburger label{
+        display: block;
+        padding: 16px;
+        cursor: pointer;
+    }
+    .hamburger img{
+        width: 30px;   
+    }
+    .menu {
+        display: block;
+        max-height: 0;
+        overflow: hidden;
+      }
+    input:checked + .menu {
+        max-height: 300px;
+      }
+    .topbar .menu a{
+        color: #000;
+        background: rgba(255, 255, 255, 0.904);
+    }
+    .topbar .menu a:hover{
+        background: #000;
+        color: #FFF;
+    }
+}
+.banner{
+    max-width: 460px;
+    background: rgba(0,0,0,0.35);
+    color: #FFF;
+    text-align: center; 
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+    padding: 20px 0px;
+}
+.banner h2{
+    font-size: 36px;
+    margin: 0 42px 0 22px;
+}
+.banner .banner-mobile{
+    display: none;
+}
+.banner p{
+    font-size: 16px;
+    margin: 16px auto 6px;
+    line-height: 1.3;
+}
+@media (max-width: 414px){
+    .banner{
+        max-width: 300px;
+    }
+    .banner .banner-mobile{
+        display: block;
+        margin: 0 auto;
+    }
+    .banner .banner-pc{
+        display: none;
+    }
+}
+.content{
+    background: #efe9e7;
+    text-align: center;   
+    color: #3D1101;
+}
+.title{
+    height: 145px;
+}
+.title-line{
+    max-width: 460px;
+    height: 2px;
+    background: #979797;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+}
+.title h3{
+    font-size: 20px;
+    color: #3D1101;
+    line-height: 32px;
+    margin: 50px 12px 30px;
+    width: 200px;
+    position: relative;
+    left: 50%;
+    background: #efe9e7;
+    transform: translateX(-50%);
+}
+@media (max-width: 414px){
+    .title-line{
+        background: transparent;
+    }   
+    .title h3{
+        margin: 50px 0 30px;
+    }
+}
+.item{
+    display: flex;
+    justify-content: space-evenly;
+}
+.item li{
+    width: 25%;
+}
+@media (max-width: 414px){
+    .item{
+        display: block;
+    }
+    .item li{
+        width: 100%;
+    }
+}
+.content  h4{
+    font-size: 18px;
+    margin: 20px 0 11px;
+}
+.content  p{
+    font-size: 16px;
+    text-align: left;
+}
+@media (max-width: 414px){
+    .content .item p{
+        margin: 0px 30px 30px;
+    }
+}
+.chef{
+    background: #3D1101;
+    margin: 50px 0px;
+    display: flex;
+    justify-content: center;
+    text-align: left;
+}
+.chef img{
+    max-width: 50%;
+    padding-left: 2%;
+}
+@media (max-width: 414px){
+    .chef{
+        display: block;
+    }
+    .chef img{
+        max-width: 100%;
+        padding: 0;
+    }
+}
+.introduce{
+    max-width: 50%;
+    color: #EFE9E7;
+    display: flex;
+    flex-direction : column;
+    justify-content: center;
+    padding: 25px;
+}
+.introduce h3{
+    font-size: 20px;
+    line-height: 32px;
+}
+.introduce h5{
+    font-family: arial,sans-serif;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+.chef .introduce p{
+    max-width: 410px;
+}
+@media (max-width: 414px){
+    .introduce{
+        max-width: 100%;
+        padding: 30px;
+    }
+}
+.comment h3{
+    font-size: 24px;
+}
+.comment-list{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 32px 20px 50px;
+}
+@media (max-width: 414px){
+    .comment-list{
+        display: block;
+    }
+}
+.comment-item{
+    display: flex;
+    width: 30% ;
+}
+@media (max-width: 414px){
+    .comment-item{
+        width: 100%;
+    }
+}
+.comment-item img{
+    width: 67px;
+    height: 67px;
+    margin-right: 13px;
+}
+.comment-item h4{
+    text-align: left;
+}
+.comment-item p{
+    padding: 11px 0px 16px;
+    line-height: 24px;
+}
+.comment-item h5{
+    text-align: right;
+}
+.booking{
+    background: rgba(250,250,250,0.70);
+    padding: 50px 42px;
+}
+.booking h3{    
+    font-size: 24px;
+    color: #3D1101;
+    text-align: center;
+    line-height: 1.3;
+    margin-bottom: 38px;
+}
+@media (max-width: 414px){
+    .booking{
+        padding: 42px 10px 50px;
+    }
+    .booking h3{
+        margin-bottom: 30px;
+    }
+}
+.booking-information{
+    display: flex;
+    justify-content: space-between;
+}
+.booking-information img{
+    width: 49%;
+}
+.booking-content{
+    width: 49%;
+}
+@media (max-width: 414px){
+    .booking-information{
+        display: block;
+    }
+    .booking-information img{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .booking-content{
+        width: 100%;
+    }
+}
+.booking-content label{
+    display: block;
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    color: #3D1101;
+    margin-bottom: 6px;
+}
+.booking-content input{
+    margin-bottom: 12px;
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    box-shadow: inset 0px 1px 0px 0px #ECECEC;
+    border-radius: 3px;
+    font-family: arial,sans-serif;
+    font-size: 16px;
+    color: #4A4A4A;
+    padding: 5px 0px 5px 14px;
+    display: block;
+    width: 100%;
+}
+.booking-content .booking-vegetarian{
+    display: inline-block;
+}
+.booking-content .vegetarian-choose{
+    margin-bottom: 0px;
+    border: 1px solid #9B9B9B;
+    width: 16px;
+    display: inline-block;
+    box-shadow: none;
+    border-radius: 0px;
+    padding: 0px;
+}
+.vegetarian-choose:hover{
+    cursor: pointer;
+}
+.booking-buttom{
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.booking-buttom .buttom-cancel{
+    margin-bottom: 0px;
+    background: rgba(0,0,0,0.35);
+    border: none;
+    box-shadow: none;
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    color: #FFFFFF;
+    padding: 0px;
+    display: inline-block;
+    width: 70px;
+    height: 32px;
+}
+.booking-buttom .buttom-ok{
+    background: #F56C23;
+    margin-left: 10px;
+}
+.booking-buttom input:active{
+    box-shadow: 0px 0px 3px rgba(34, 33, 33, 0.582)
+}
+.buttom-cancel:hover{
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.246);
+}
+.booking-buttom .buttom-ok:hover{
+    cursor: pointer;
+    background: #f56d23d7;
+}
+.footer{
+    background: #efe9e7;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 42px;
+    font-size: 16px;
+    color: #3D1101;
+}
+@media (max-width: 414px){
+    .footer{ 
+        display: block;
+        padding: 50px 10px;
+    }
+}
+.footer h3{
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+.restaurant{
+    width: 30%;
+}
+@media (max-width: 414px){
+    .restaurant{ 
+        width: 100%;
+    }
+    .restaurant p{
+        margin-bottom: 30px;
+    }
+}
+.restaurant-information{
+    list-style: disc;
+    padding-left: 1em;
+}
+.restaurant-information a{
+    text-decoration: none;
+    color: #3D1101;
+}
+.restaurant-information a:hover{
+    color: gray;
+}
+.restaurant-media{
+    text-align: right;
+}
+@media (max-width: 414px){
+    .restaurant-media{ 
+        margin-top: 30px;
+    }
+}
+.footer-logo{
+    height: 50px;
+    display: block;
+}
+.footer-logo:hover{
+    border-bottom: 3px solid #CCCCCC;
+}
+.footer-media{
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    margin: 22px 0px 0px 12px;
+}
+.footer-media:hover{
+    border-bottom: 3px solid #CCCCCC;
+}
